@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUI INU Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.jpeg" alt="GUI INU Logo" class="logo">
+            <h1>GUI INU Marketplace</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Marketplace</a></li>
+                <li><a href="#">Sell</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#" class="wallet">Wallet: 250 $DUI</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Welcome to the GUI INU Marketplace</h2>
+                <p>Buy and sell products with ease, earn $DUI tokens, and enjoy a gamified selling experience!</p>
+                <div class="hero-buttons">
+                    <button class="btn primary">Start Shopping</button>
+                    <button class="btn secondary">Sell Products</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="logo.jpeg" alt="GUI INU Mascot">
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Marketplace Features</h2>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <i class="fas fa-upload"></i>
+                    <h3>Upload Products</h3>
+                    <p>Easily list your items for sale on our marketplace</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>Local Currency</h3>
+                    <p>Pay with your local bank details for convenience</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-exchange-alt"></i>
+                    <h3>Auto Conversion</h3>
+                    <p>Funds automatically convert to $DUI tokens</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Gamified Profile</h3>
+                    <p>Level up your seller profile with achievements</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="products">
+            <div class="section-header">
+                <h2>Featured Products</h2>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="cup.jpg" alt="GUI INU Mug">
+                    </div>
+                    <div class="product-info">
+                        <h3>GUI INU Coffee Mug</h3>
+                        <p class="product-description">Colorful coffee mug featuring the GUI INU mascot</p>
+                        <div class="product-meta">
+                            <span class="product-price">15 $DUI</span>
+                            <span class="seller-level">Seller: Level 3</span>
+                        </div>
+                        <button class="btn primary">Buy Now</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="fluff.jpeg" alt="GUI INU Plush Toy">
+                    </div>
+                    <div class="product-info">
+                        <h3>GUI INU Plush Toy</h3>
+                        <p class="product-description">Adorable crochet dog plush, handmade with love</p>
+                        <div class="product-meta">
+                            <span class="product-price">45 $DUI</span>
+                            <span class="seller-level">Seller: Level 5</span>
+                        </div>
+                        <button class="btn primary">Buy Now</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="shirt.jpeg" alt="GUI INU T-Shirt">
+                    </div>
+                    <div class="product-info">
+                        <h3>GUI INU T-Shirt</h3>
+                        <p class="product-description">Premium cotton t-shirt with GUI INU logo</p>
+                        <div class="product-meta">
+                            <span class="product-price">25 $DUI</span>
+                            <span class="seller-level">Seller: Level 4</span>
+                        </div>
+                        <button class="btn primary">Buy Now</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="keychain.jpg" alt="GUI INU Keychain">
+                    </div>
+                    <div class="product-info">
+                        <h3>GUI INU Keychain</h3>
+                        <p class="product-description">Metal keychain with GUI INU charm</p>
+                        <div class="product-meta">
+                            <span class="product-price">10 $DUI</span>
+                            <span class="seller-level">Seller: Level 2</span>
+                        </div>
+                        <button class="btn primary">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upload Product Modal -->
+        <div class="modal" id="upload-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Upload a Product</h2>
+                <form id="upload-form">
+                    <div class="form-group">
+                        <label for="product-name">Product Name</label>
+                        <input type="text" id="product-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-description">Description</label>
+                        <textarea id="product-description" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-price">Price (in your local currency)</label>
+                        <input type="number" id="product-price" required>
+                        <span class="conversion-note">Will be converted to $DUI automatically</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-image">Product Image</label>
+                        <input type="file" id="product-image" accept="image/*" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-category">Category</label>
+                        <select id="product-category" required>
+                            <option value="">Select a category</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="accessories">Accessories</option>
+                            <option value="collectibles">Collectibles</option>
+                            <option value="digital">Digital Items</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn primary">List Product</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Purchase Modal -->
+        <div class="modal" id="purchase-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Complete Your Purchase</h2>
+                <div class="purchase-details">
+                    <div class="purchase-product">
+                        <img src="images/product-mug.png" alt="GUI INU Mug" class="purchase-image">
+                        <div>
+                            <h3>GUI INU Coffee Mug</h3>
+                            <p>Price: 15 $DUI</p>
+                        </div>
+                    </div>
+                    <div class="payment-options">
+                        <h3>Payment Method</h3>
+                        <div class="payment-selector">
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="bank" checked>
+                                <span>Bank Transfer</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="dui">
+                                <span>$DUI Balance</span>
+                            </label>
+                        </div>
+                        <div id="bank-details" class="payment-details">
+                            <div class="form-group">
+                                <label for="bank-name">Bank Name</label>
+                                <input type="text" id="bank-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="account-number">Account Number</label>
+                                <input type="text" id="account-number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="account-name">Account Holder Name</label>
+                                <input type="text" id="account-name" required>
+                            </div>
+                            <div class="conversion-info">
+                                <p>Your payment will be converted to $DUI automatically</p>
+                                <p>Exchange rate: 1 USD ≈ 2.5 $DUI</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn primary">Confirm Purchase</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seller Profile Section -->
+        <section class="seller-profile">
+            <div class="section-header">
+                <h2>Your Seller Profile</h2>
+                <a href="#" class="edit-profile">Edit Profile</a>
+            </div>
+            <div class="profile-container">
+                <div class="profile-sidebar">
+                    <div class="profile-avatar">
+                        <img src="AVATAR.jpeg" alt="Seller Avatar">
+                        <div class="level-badge">Level 4</div>
+                    </div>
+                    <h3>DogeLover123</h3>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-value">32</span>
+                            <span class="stat-label">Sales</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">4.8</span>
+                            <span class="stat-label">Rating</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">750</span>
+                            <span class="stat-label">$DUI Earned</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-content">
+                    <div class="achievements">
+                        <h3>Achievements</h3>
+                        <div class="achievement-grid">
+                            <div class="achievement unlocked">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-store"></i>
+                                </div>
+                                <div class="achievement-info">
+                                    <h4>Store Opener</h4>
+                                    <p>Listed your first product</p>
+                                </div>
+                            </div>
+                            <div class="achievement unlocked">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="achievement-info">
+                                    <h4>5-Star Seller</h4>
+                                    <p>Received 10 five-star ratings</p>
+                                </div>
+                            </div>
+                            <div class="achievement unlocked">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <div class="achievement-info">
+                                    <h4>Rising Star</h4>
+                                    <p>Completed 25 sales</p>
+                                </div>
+                            </div>
+                            <div class="achievement locked">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-crown"></i>
+                                </div>
+                                <div class="achievement-info">
+                                    <h4>Top Seller</h4>
+                                    <p>Complete 100 sales</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="level-progress">
+                        <h3>Level Progress</h3>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 75%;"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span>Level 4</span>
+                                <span>75% to Level 5</span>
+                            </div>
+                        </div>
+                        <div class="level-benefits">
+                            <h4>Current Benefits:</h4>
+                            <ul>
+                                <li>Voting Power Increased to 10pts!</li>
+                            </ul>
+                            <h4>Next Level Benefits:</h4>
+                            <ul>
+                                <li>Shout Out in community announcement</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/gui-inu-logo.png" alt="GUI INU Logo" class="logo">
+                <h3>GUI INU Marketplace</h3>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Marketplace</h4>
+                    <ul>
+                        <li><a href="#">All Products</a></li>
+                        <li><a href="#">Featured Items</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Deals & Discounts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Sell</h4>
+                    <ul>
+                        <li><a href="#">Start Selling</a></li>
+                        <li><a href="#">Seller Guidelines</a></li>
+                        <li><a href="#">Fee Structure</a></li>
+                        <li><a href="#">Seller Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="#">About GUI INU</a></li>
+                        <li><a href="#">$DUI Token</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 GUI INU Marketplace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
